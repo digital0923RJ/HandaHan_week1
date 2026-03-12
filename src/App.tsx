@@ -1,10 +1,16 @@
+import { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false);
+
   return (
-    <div className="App">
+    <div className={`App${darkMode ? ' dark' : ''}`}>
       <header className="App-header">
         <h1>Korean Learning Hub</h1>
+        <button className="theme-toggle" onClick={() => setDarkMode(!darkMode)}>
+          {darkMode ? '☀️ Light Mode' : '🌙 Dark Mode'}
+        </button>
       </header>
       <main className="learning-container">
         <section className="input-section">
